@@ -530,7 +530,6 @@ require('lazy').setup({
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
-    enabled = G.isNeovide,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
@@ -810,7 +809,6 @@ require('lazy').setup({
   },
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
-    enabled = G.isNeovide,
     event = 'InsertEnter',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
