@@ -119,6 +119,12 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
+-- set colorcolumn to 80
+vim.opt.colorcolumn = '80'
+
+-- TODO: Figure how to have multiple colorcolumns and add a python specific one
+-- in file type specific config
+
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
