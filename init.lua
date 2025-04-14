@@ -164,7 +164,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -979,6 +979,11 @@ require('lazy').setup({
         return '%2l:%-2v'
       end
 
+      -- Start screen for Neovim
+      require('mini.starter').setup()
+      -- Save sessions
+      require('mini.sessions').setup()
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
@@ -1019,6 +1024,40 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'ThePrimeagen/refactoring.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    lazy = true,
+    opts = {
+      prompt_func_return_type = {
+        go = true,
+        java = false,
+
+        cpp = true,
+        c = true,
+        h = true,
+        hpp = true,
+        cxx = true,
+      },
+      prompt_func_param_type = {
+        go = true,
+        java = false,
+
+        cpp = true,
+        c = true,
+        h = true,
+        hpp = true,
+        cxx = true,
+      },
+      printf_statements = {},
+      print_var_statements = {},
+      show_success_message = false, -- shows a message with information about the refactor on success
+      -- i.e. [Refactor] Inlined 3 variable occurrences
+    },
   },
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
