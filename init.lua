@@ -84,10 +84,10 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
-require 'options'
-require 'keymaps'
-require 'autocmds'
-require 'neovide'
+require 'custom.options'
+require 'custom.keymaps'
+require 'custom.autocmds'
+require 'custom.neovide'
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -919,7 +919,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
